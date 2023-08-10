@@ -1,8 +1,10 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    localStorage.setItem("om", "The boss!");
 
-    var clockify = document.querySelector("#main-container");
+    var clockifyBody = document.querySelector("body");
+    var clockify = document.createElement("div");
+    clockify.classList.add("overall-layer");
+    clockifyBody.appendChild(clockify);
 
     // header section
 
@@ -17,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     var menuImg = document.createElement("img");
                     menuImg.classList.add("header-section__home-link__home__menu-size-img__menu-img");
                         var menuImgAttribute = { "src" : "./assets/hamburger-menu.png", "alt" : "Menu-Image"};
-                        SetCollection(menuImg, menuImgAttribute);
+                        setCollection(menuImg, menuImgAttribute);
                 var homeImg = document.createElement("div");
                 homeImg.classList.add("header-section__home-link__home__homeImg")
                     var clockifyImg = document.createElement("img");
                     clockifyImg.classList.add("header-section__home-link__home__homeImg__clockify-img");
                         var clockifyImgAttribute = { "src" : "./assets/clockify-logo.svg", "alt" : "Clockify-logo"};
-                        SetCollection(clockifyImg, clockifyImgAttribute);
+                        setCollection(clockifyImg, clockifyImgAttribute);
             var account = document.createElement("div");
             account.classList.add("header-section__account");
                 var workspace = document.createElement("div");
@@ -40,19 +42,19 @@ document.addEventListener("DOMContentLoaded", function() {
                     var queryImg = document.createElement("img");
                     queryImg.classList.add("header-section__account__help__query-img");
                         var queryImgAttribute = { "src" : "./assets/Help options.svg", "alt" : "Help-Image"};
-                        SetCollection(queryImg, queryImgAttribute);
+                        setCollection(queryImg, queryImgAttribute);
                 var notification = document.createElement("div");
                 notification.classList.add("header-section__account__notification");
                     var bellImg = document.createElement("img");
                     bellImg.classList.add("header-section__account__notification__bell-img");
                         var bellImgAttribute = { "src" : "./assets/View notifications.svg", "alt" : "Notification-Image"};
-                        SetCollection(bellImg, bellImgAttribute);
+                        setCollection(bellImg, bellImgAttribute);
                 var profile = document.createElement("div");
                 profile.classList.add("header-section__account__profile");
                     var profileImg = document.createElement("img");
                     profileImg.classList.add("header-section__account__profile__profile-img");
                         var profileImgAttribute = { "src" : "./assets/user.png", "alt" : "Profile-Pic"};
-                        SetCollection(profileImg, profileImgAttribute);
+                        setCollection(profileImg, profileImgAttribute);
 
     clockify.appendChild(headerSection);
         headerSection.appendChild(homeLink);
@@ -73,9 +75,34 @@ document.addEventListener("DOMContentLoaded", function() {
             account.appendChild(profile);
                 profile.appendChild(profileImg);
 
+    // Common section
+    
+    var commonSection = document.createElement("div");
+    commonSection.classList.add("common-section");
+
+    clockify.appendChild(commonSection);
+
+        // Sidebar section
+
+        var sideBarSection = document.createElement("aside");
+        sideBarSection.classList.add("sidebar-section");
+            var sideBarMainContent = document.createElement("div");
+            sideBarMainContent.classList.add("sidebar-section__main-content");
+
+
+        commonSection.appendChild(sideBarSection);
+            sideBarSection.appendChild(sideBarMainContent);
+        
+        // Main section
+
+        var mainSection = document.createElement("div");
+        mainSection.classList.add("main-section");
+
+        commonSection.appendChild(mainSection);
+
 });
 
-function SetCollection(element, attributes) {
+function setCollection(element, attributes) {
     for (var key in attributes) {
         if (attributes.hasOwnProperty(key)) {
             element.setAttribute(key, attributes[key]);

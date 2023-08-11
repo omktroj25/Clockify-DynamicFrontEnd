@@ -88,17 +88,101 @@ document.addEventListener("DOMContentLoaded", function() {
         sideBarSection.classList.add("sidebar-section");
             var sideBarMainContent = document.createElement("div");
             sideBarMainContent.classList.add("sidebar-section__main-content");
-
+                var timeSheet = createSideBarOption("./assets/View Timesheet.svg", "TIMESHEET");
+                var timeTracker = createSideBarOption("./assets/View Time tracker.svg", "TIME TRACKER");
+                var calendar = createSideBarOption("./assets/View Calendar.svg", "CALENDAR");
+                    var analyze = createSideBarHeading("ANALYZE");
+                var dashboard = createSideBarOption("./assets/View Dashboard.svg", "DASHBOARD");
+                var reports = createSideBarOption("./assets/View Reports.svg", "REPORTS");
+                    var manage = createSideBarHeading("MANAGE");
+                var projects = createSideBarOption("./assets/View Projects.svg", "PROJECTS");
+                var team = createSideBarOption("./assets/View Team.svg", "TEAM");
+                var clients = createSideBarOption("./assets/View Clients.svg", "CLIENTS");
+                var tags = createSideBarOption("./assets/View Tags.svg", "TAGS");
+                var settings = createSideBarOption("./assets/View Settings.svg", "SETTINGS");
+                    var show = createSideBarOption("./assets/half-down-arrow.svg", "SHOW MORE");
+                    show.style.color = "#999";
+                var kiosks = createSideBarOption("./assets/View Kiosks.svg", "KIOSKS");
+                var schedule = createSideBarOption("./assets/View Schedule.svg", "SCHEDULE");
+                var expenses = createSideBarOption("./assets/View Expenses.svg", "EXPENSES");
+                var timeOff = createSideBarOption("./assets/View Time off.svg", "TIME OFF");
+                var activity = createSideBarOption("./assets/View Activity.svg", "ACTIVITY");
+                var approvals = createSideBarOption("./assets/View Approvals.svg", "APPROVALS");
+                var invoices = createSideBarOption("./assets/View Invoices.png", "INVOICES");
 
         commonSection.appendChild(sideBarSection);
             sideBarSection.appendChild(sideBarMainContent);
+                sideBarMainContent.appendChild(timeSheet);
+                sideBarMainContent.appendChild(timeTracker);
+                sideBarMainContent.appendChild(calendar);
+                    sideBarMainContent.appendChild(analyze);
+                sideBarMainContent.appendChild(dashboard);
+                sideBarMainContent.appendChild(reports);
+                    sideBarMainContent.appendChild(manage);
+                sideBarMainContent.appendChild(projects);
+                sideBarMainContent.appendChild(team);
+                sideBarMainContent.appendChild(clients);
+                sideBarMainContent.appendChild(tags);
+                sideBarMainContent.appendChild(settings);
+                    sideBarMainContent.appendChild(show);
+                sideBarMainContent.appendChild(kiosks);
+                sideBarMainContent.appendChild(schedule);
+                sideBarMainContent.appendChild(expenses);
+                sideBarMainContent.appendChild(timeOff);
+                sideBarMainContent.appendChild(activity);
+                sideBarMainContent.appendChild(approvals);
+                sideBarMainContent.appendChild(invoices);
         
+                    var additionalOptions = [kiosks, schedule, expenses, timeOff, activity, approvals, invoices];
+                    additionalOptions.forEach(option => option.classList.toggle("show-hidden"));
+                    show.classList.toggle("hidden");
+                    
         // Main section
 
         var mainSection = document.createElement("div");
         mainSection.classList.add("main-section");
 
         commonSection.appendChild(mainSection);
+
+// Event listener
+
+show.addEventListener("click", function() {
+    var additionalOptions = [kiosks, schedule, expenses, timeOff, activity, approvals, invoices];
+    additionalOptions.forEach(option => option.classList.toggle("show-hidden"));
+
+    if (show.classList.contains("hidden")) {
+        show.querySelector(".sidebar-section__main-content__option__icon__img").style.rotate = "180deg";
+        show.querySelector(".sidebar-section__main-content__option__context__txt").textContent = "SHOW LESS";
+    } 
+    else {
+        show.querySelector(".sidebar-section__main-content__option__icon__img").style.rotate = "360deg";
+        show.querySelector(".sidebar-section__main-content__option__context__txt").textContent = "SHOW MORE";
+    }
+
+    show.classList.toggle("hidden");
+});
+
+
+menuSizeImg.addEventListener("click", function() {
+    
+    var sidebarContext = document.querySelectorAll(".sidebar-section__main-content__option__context");
+    var sidebarTitle = document.querySelectorAll(".sidebar-section__main-content__title");
+    var sidebarIcon = document.querySelectorAll(".sidebar-section__main-content__option__icon");
+
+    sidebarContext.forEach(function(item){
+        item.classList.toggle("sidebar-context-hidden");
+    });
+
+    sidebarTitle.forEach(function(item){
+        item.classList.toggle("sidebar-title-hidden");
+    });
+
+    sidebarIcon.forEach(function(item){
+        item.classList.toggle("sidebar-icon-expand");
+    })
+    
+});
+
 
 });
 
@@ -108,4 +192,38 @@ function setCollection(element, attributes) {
             element.setAttribute(key, attributes[key]);
         }
     }
+}
+
+function createSideBarOption(imgSrc, option) {
+    var element =document.createElement("div");
+    element.classList.add("sidebar-section__main-content__option");
+        var elementIcon = document.createElement("div");
+        elementIcon.classList.add("sidebar-section__main-content__option__icon");
+            var elementImg = document.createElement("img");
+            elementImg.classList.add("sidebar-section__main-content__option__icon__img");
+            elementImg.src = imgSrc;
+        var elementContext = document.createElement("div");
+        elementContext.classList.add("sidebar-section__main-content__option__context");
+            var elementTxt = document.createElement("p");
+            elementTxt.classList.add("sidebar-section__main-content__option__context__txt");
+            elementTxt.textContent = option;
+
+    element.appendChild(elementIcon);
+        elementIcon.appendChild(elementImg);
+    element.appendChild(elementContext);
+        elementContext.appendChild(elementTxt);
+    
+    return element;
+}
+
+function createSideBarHeading(option) {
+    var element =document.createElement("div");
+    element.classList.add("sidebar-section__main-content__title");
+        var elementTxt = document.createElement("p");
+        elementTxt.classList.add("sidebar-section__main-content__title__txt");
+        elementTxt.textContent = option;
+
+    element.appendChild(elementTxt);
+    
+    return element;
 }

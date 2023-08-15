@@ -79,6 +79,7 @@
     line-height: 1.5rem;
     cursor: pointer;
     margin: 0rem 1rem;
+    outline: none;
 }
 
 .header-section__account__plan{
@@ -232,9 +233,7 @@
 }
 
 .show-hidden{
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 0.2s;
+    display: none;
 }
 
 .sidebar-context-hidden{
@@ -261,7 +260,205 @@
 /* Main section style */
 
 .main-section{
-    background-color: rgb(242,246,248);
     height: 100%;
     width: 100%;
+}
+
+
+ /* Time sheet section */
+
+.time-tracker-section{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(242,246,248);
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.time-tracker-section__time-tracker-bar{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: .07rem solid  rgb(197,210,217);
+    margin: 2.5rem 1.2rem 0rem;
+    padding: .7rem 0rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__description-field{
+    display: flex;
+    padding: 0rem .7rem;
+    width: 100%;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__description-field__input {
+    display: flex;
+    width: 100%;
+    max-height: 2.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 0.07rem solid transparent;
+    border-radius: 2px;
+    transition: border-color 0.3s ease;
+    padding: .7rem .5rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__description-field__input:focus {
+    color: black;
+    padding-left: .5rem;
+    outline: none;
+    border-color: rgb(197,210,217);
+}
+
+.time-tracker-section__time-tracker-bar:hover .time-tracker-section__time-tracker-bar__time-tracker-bar-field__description-field__input {
+    border-color: rgb(197,210,217); 
+}
+
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project:hover .time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__txt__add-txt {
+    font-size: .9rem;
+    font-weight: 450;
+    color: #0275A8;
+    text-decoration: underline;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__img{
+    display: flex;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__img__add-img{
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__txt{
+    display: flex;
+    margin-left: .5rem;
+    padding-right: 1rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__txt__add-txt{
+    font-size: .9rem;
+    color: #03a9f4;
+    font-weight: 450;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0rem 1rem;
+    border-left: .07rem dotted rgb(197,210,217);
+    border-right: .07rem dotted rgb(197,210,217);
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__img{
+    cursor: pointer;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__bill-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0rem 1.2rem;
+    border-right: .07rem dotted rgb(197,210,217);
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__bill-btn__symbol{
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: rgb(197,210,217);
+}
+
+.billable{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #03a9f4;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__clock-btn{
+    display: flex;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__clock-btn__clock{
+    padding: 0rem 2rem;
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__trigger-btn{
+    display: flex;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__trigger-btn__btn{
+    cursor: pointer;
+    color: #fefefe;
+    min-height: 2.5rem;
+    background-color: #03a9f4;
+    border: 0.1rem solid #03a9f4;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    border-radius: 0.2rem;
+    line-height: 1.6rem;
+    cursor: pointer;
+    min-width: 6.5rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__mode{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 2rem;
+    align-items: center;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__mode__auto-btn{
+    display: flex;
+    padding: 0rem .8rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__mode__auto-btn__img{
+    cursor: pointer;
+    max-width: 1rem;
+    max-height: 1rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__mode__manual-btn{
+    display: flex;
+    padding: 0rem .8rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__mode__manual-btn__img{
+    cursor: pointer;
+    max-width: 1rem;
+    max-height: 1rem;
 }

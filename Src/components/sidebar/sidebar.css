@@ -1,0 +1,113 @@
+/* Sidebar section */
+
+.sidebar-section{
+    display: flex;
+}
+
+.sidebar-section__main-content{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border-left: 0.24rem solid rgb(0, 168, 244);
+    border-right: .07rem solid  rgb(197,210,217);
+}
+
+.sidebar-section__main-content__option{
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+    align-items: center;
+    min-height: 3.125rem;
+    max-width: 12.5rem;
+    text-transform: uppercase;
+    padding: .5rem 0rem;
+}
+
+.sidebar-section__main-content__option::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(228,234,238);
+    top: 0;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.sidebar-section__main-content__option:hover:before{
+    width: 100%;
+}
+
+.sidebar-section__main-content__option__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    max-height: 2rem;
+    margin: 0 0.35rem 0 1.14rem;
+    z-index: 1;
+}
+
+.sidebar-section__main-content__option__icon__img{
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.sidebar-section__main-content__option__context{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 10rem;
+    max-height: 2rem;
+    z-index: 1;
+}
+
+.sidebar-section__main-content__option__context__txt{
+    margin-right: 1.14rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.sidebar-section__main-content__title{
+    display: flex;
+    background-color: white;
+    height: 2.5rem;
+    padding: 1.1rem 0rem .3125rem 1.5rem ;
+    align-items: flex-end;
+}
+
+.sidebar-section__main-content__title__txt{
+    color: #999;
+    letter-spacing: 1px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .78rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.show-hidden{
+    display: none;
+}
+
+.sidebar-context-hidden{
+    width: 0rem;
+    transform: translateX(-100%);
+    transition: width 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sidebar-title-hidden{
+    display: none;
+}
+
+.sidebar-icon-expand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    max-height: 2rem;
+    margin: 0 1.14rem 0 1.14rem;
+    z-index: 1;
+}

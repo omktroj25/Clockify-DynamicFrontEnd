@@ -26,12 +26,3 @@ selectedWorkspace.addEventListener("click", function() {
 workspaceDropdown.addEventListener("click", function() {
     workspaceMenu.style.display = workspaceMenu.style.display === "flex" ? "none" : "flex";
 });
-
-// Add an event listener to the document to capture clicks to hide workspace drop down
-document.addEventListener("click", function(event) {
-    var clickedElement = event.target;
-    // Check if the clicked element is not the button or workspace menu
-    if (clickedElement !== selectedWorkspace && clickedElement !== workspaceMenu) {
-        workspaceMenu.style.display = "none";
-    }
-});

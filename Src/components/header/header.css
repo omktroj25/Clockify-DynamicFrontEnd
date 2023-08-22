@@ -3,7 +3,7 @@
 .header-section{
     display: flex;
     min-height: 3.3rem;
-    max-width: 100vw;
+    max-width: 100%;
     background-color: white;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +92,7 @@
     background-color:  white;
     flex-direction: column;
     padding: .5rem 0rem;
+    z-index: 1;
 }
 
 .header-section__account__workspace__workspace-menu__workspace-title{

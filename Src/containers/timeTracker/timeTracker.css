@@ -32,9 +32,10 @@
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-field__description-field__input {
-    display: flex;
     width: 100%;
+    display: flex;
     max-height: 2.5rem;
+    min-width: 15rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
@@ -87,6 +88,9 @@
     display: flex;
     padding-left: .5rem;
     margin-right: 1rem;
+    max-height: 1.5rem;
+    overflow-x: hidden;
+    max-width: 15rem;
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__txt__add-txt{
@@ -97,7 +101,8 @@
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    max-width: 100%;
     align-items: center;
 }
 
@@ -109,7 +114,28 @@
     min-height: 2.5rem;
     padding: 0rem 1rem;
     border-left: .07rem dotted rgb(197,210,217);
-    border-right: .07rem dotted rgb(197,210,217);
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__selected{
+    display: flex;
+    align-items: center;
+    max-width: 15rem;
+    max-height: 1rem;
+    padding: 0rem 1rem;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__selected__txt{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #02587f;
+    background-color: #E1F5FE;
+    border-radius: 0.1rem;
+    padding: 0.1rem 0.4rem;
+    max-height: 1rem;
+    overflow-x: hidden;
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__dropdown{
@@ -122,7 +148,6 @@
     box-shadow: 0 5px 10px #0000001a;
     border-radius: 0.2rem;
     min-height: 6rem;
-    max-height: 15rem;
     min-width: 22.5rem;
     padding: 0.5rem 0rem;
     z-index: 1;
@@ -181,6 +206,7 @@
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__dropdown__quick-view__press__shortcut{
+    display: flex;
     color: rgb(153,153,153);
     font-size: .8rem;
     font-weight: 400;
@@ -193,6 +219,11 @@
     font-weight: 400;
     line-height: 1.5;
     padding-left: .2rem;
+    cursor: pointer;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__dropdown__quick-view__press__click:hover{
+    text-decoration: underline;
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__img{
@@ -208,6 +239,7 @@
     min-height: 2.5rem;
     padding: 0rem 1.2rem;
     border-right: .07rem dotted rgb(197,210,217);
+    border-left: .07rem dotted rgb(197,210,217);
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__bill-btn__symbol{
@@ -373,7 +405,6 @@
     box-shadow: 0 5px 10px #0000001a;
     border-radius: .2rem;
     min-height: 10rem;
-    max-height: 15rem;
     min-width: 22.5rem;
     padding: .5rem 0rem;
     z-index: 1;
@@ -443,6 +474,11 @@
     font-weight: 400;
     line-height: 1.5;
     padding-left: .2rem;
+    cursor: pointer;
+}
+
+.time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__menu__quick-view__press__click:hover{
+    text-decoration: underline;
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-field__project__menu__quick-view__create{
@@ -582,6 +618,7 @@
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry{
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 3.5rem;
     padding: .5rem;
@@ -589,6 +626,14 @@
     border-bottom: .07rem solid  rgb(197,210,217);
     border-left: .07rem solid  rgb(197,210,217);
     border-right: .07rem solid  rgb(197,210,217);
+}
+
+.last-entry__bottom-style{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: .30rem solid  rgb(197,210,217);
+    margin-bottom: 1rem;
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry:hover {
@@ -649,14 +694,16 @@
     display: flex;
     justify-content: center;
     max-width: 15rem;
-    min-height: 2.5rem;
+    min-width: 3.5rem;
+    max-height: 2.5rem;
+    overflow: hidden;
     align-items: center;
     padding: 0rem 1rem;
-    border-left: .07rem dotted rgb(197,210,217);
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag__txt{
     display: none;
+    align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
@@ -668,10 +715,9 @@
 }
 
 img.time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag__img{
-    /* display: none; */
     cursor: pointer;
     max-width: 1.5rem;
-    max-height: 1.5rem;
+    min-height: 2.5rem;
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__bill{
@@ -760,10 +806,6 @@ img.time-tracker-section__time-tracker-entry-section__entry-container__main-cont
     border-right: .07rem dotted rgb(197,210,217);
 }
 
-.time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__calendar__img{
-    display: none;
-}
-
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__duration{
     font-size: 1.2rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -827,6 +869,7 @@ img.time-tracker-section__time-tracker-entry-section__entry-container__main-cont
     padding: .5rem 0rem;
     border-radius: 2px;
     box-shadow: 0 5px 10px #0000001a;
+    z-index: 1;
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu__dropdown__duplicate{

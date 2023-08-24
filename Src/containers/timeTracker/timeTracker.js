@@ -145,7 +145,7 @@ mainSection.appendChild(timeTrackerSection);
                 timeTrackerProject.appendChild(timeTrackerProjectMenu);
         timeTrackerBar.appendChild(timeTrackerBarButton);
             timeTrackerBarButton.appendChild(timeTrackerTag);
-                timeTrackerTag.appendChild(timeTrackerTagImg)
+                timeTrackerTag.appendChild(timeTrackerTagImg);
             timeTrackerBarButton.appendChild(timeTrackerBill);
                 timeTrackerBill.appendChild(timeTrackerBillSymbol);
             timeTrackerBarButton.appendChild(timeTrackerAutoClock);
@@ -158,68 +158,7 @@ mainSection.appendChild(timeTrackerSection);
                 timeTrackerMode.appendChild(timeTrackerManual);
                     timeTrackerManual.appendChild(timeTrackerManualImg);
     timeTrackerSection.appendChild(timeTrackerEntrySection);
-        // timeTrackerEntrySection.appendChild(timeTrackerEntryDefault);
-            timeTrackerEntrySection.appendChild(timeTrackerEntry);
-
-
-var entrySection = document.querySelector(".time-tracker-section__time-tracker-entry-section__entry-container__main-content");
-var weekEntry = document.createElement("div");
-weekEntry.classList.add("time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry");
-weekEntry.innerHTML = `<div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry__week">This week</div>
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry__total">
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry__total__title">Week total:</div>
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry__total__cumulative">
-                                <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__week-entry__total__cumulative__duration">00:00:00</div>
-                            </div>
-                        </div>`;
-var dayEntry = document.createElement("div");
-dayEntry.classList.add("time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry");
-dayEntry.innerHTML = `<div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__day">Today</div>
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total">
-                                <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total__title">Total:</div>
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total__cumulative">
-                                <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total__cumulative__duration">00:00:00</div>
-                            </div>
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total__cumulative__bulk-edit">
-                                <img src="./assets/icons/bulk-edit.svg" alt="bulk-edit" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__day-entry__total__cumulative__bulk-edit__icon"/>
-                            </div>
-                        </div>`;
-var entry = document.createElement("div");
-entry.classList.add("time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry");
-entry.innerHTML = `<input type="text" placeholder="Add description" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__description"></input>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__project">
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__project__dot"></div>
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__project__txt">Project</div>
-                    </div>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag">
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag__txt">Tag</div>
-                        <img src="./assets/icons/Tag empty.svg" alt="tag-icon" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag__img"/>
-                    </div>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__bill">$</div>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__time">
-                        <input type="text" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__time__start"></input>
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__time__gap">-</div>
-                        <input type="text" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__time__end"></input>
-                    </div>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__calendar">
-                        <input type="date" id="datepicker" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__calendar__img"/>
-                        <label for="datepicker" style="cursor: pointer;"><img id="calendar" src="./assets/icons/View Calendar.svg" alt="calendar" style="min-width:1.3rem; min-height:1.3rem;" /></label>
-                    </div>
-                    <input type="text" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__duration"></input>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__play">
-                        <img src="./assets/icons/play.svg" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__play__icon"/>
-                    </div>
-                    <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu">
-                        <img src="./assets/icons/menu-dots-vertical.svg" class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu__icon"/>
-                        <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu__dropdown">
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu__dropdown__duplicate">Duplicate</div>
-                            <div class="time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__menu__dropdown__delete">Delete</div>
-                        </div>
-                    </div>`;
+        timeTrackerEntrySection.appendChild(timeTrackerEntryDefault);
 
 
 
-            entrySection.appendChild(weekEntry);
-            entrySection.appendChild(dayEntry);
-            entrySection.appendChild(entry);
-            

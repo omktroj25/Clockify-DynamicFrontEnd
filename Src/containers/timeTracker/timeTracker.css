@@ -6,6 +6,7 @@
     background-color: rgb(242,246,248);
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .time-tracker-section__time-tracker-bar{
@@ -139,8 +140,8 @@
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__tag-btn__dropdown{
-    position: absolute;
     display: none;
+    position: fixed;
     flex-direction: column;
     top: 2.625rem;
     left: 0rem;
@@ -252,7 +253,7 @@
 .billable{
     font-size: 1.4rem;
     font-weight: 400;
-    color: #03a9f4;
+    color: #03a9f4 !important;
 }
 
 .time-tracker-section__time-tracker-bar__time-tracker-bar-button__duration{
@@ -666,6 +667,7 @@
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__project{
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
@@ -691,6 +693,7 @@
 }
 
 .time-tracker-section__time-tracker-entry-section__entry-container__main-content__entry__tag{
+    position: relative;
     display: flex;
     justify-content: center;
     max-width: 15rem;
